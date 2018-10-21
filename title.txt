@@ -1,0 +1,7 @@
+  TITLE SEQUENCE II - ELECTRIC BOOGALOO
+
+This is where the title sequence should go.
+
+It will all be printed a line at a time at
+the start of the game, before the player
+starts the game.
