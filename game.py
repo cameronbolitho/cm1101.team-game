@@ -5,7 +5,7 @@ from gameparser import normalise_input
 from time import sleep, clock
 
 
-# Take timed input, timed in seconds.
+# Take input with a time limit, timed in seconds.
 def input_fast_enough(prompt, correct_input, max_time):
     # Record the time before and after the user types their input.
     start_time = clock()
@@ -207,8 +207,8 @@ def display_title_sequence():
 
     # Print lines one at a time, separated with blank lines.
     for line in f:
-        sleep(0.4)
         print(line[:-1])  # The last character will be a newline so shouldn't be printed.
+        sleep(0.4)
 
 
 # Allow the player to choose a character.
@@ -239,13 +239,15 @@ def main():
     # Introduction (ready to play etc)
     input("Press enter when you're ready to play")
 
+    print()
+
     # Show the title sequence
     display_title_sequence()
 
-    print()
-
     # Allow the user to select a character
     choose_character()
+
+    print()
 
     while True:
         # Print status
