@@ -3,6 +3,7 @@ from items import items
 from player import *
 from gameparser import normalise_input
 from time import sleep, clock
+from re import match
 
 
 # Take input with a time limit, timed in seconds.
@@ -18,6 +19,12 @@ def input_fast_enough(prompt, correct_input, max_time):
         return True
     else:
         return False
+
+
+# Input float
+def input_float(prompt):
+    user_input = input(prompt)
+    return match("^[0-9]+\\.[0-9]+$", user_input) != None
 
 
 # Items in inventory
