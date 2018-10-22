@@ -22,9 +22,10 @@ def input_fast_enough(prompt, correct_input, max_time):
 
 
 # Input float
-def input_float(prompt):
-    user_input = input(prompt)
-    return match("^[0-9]+\\.[0-9]+$", user_input) != None
+def input_float():
+    user_input = input("Quick, input a float!")
+    while match("^[0-9]+\\.[0-9]+$", user_input) == None:
+        user_input = input("Quick, input a float!")
 
 
 # Items in inventory
@@ -221,6 +222,34 @@ def display_title_sequence():
 # Allow the player to choose a character.
 def choose_character():
     global inventory, max_mass, current_location, max_health, health
+
+    print(" ________________________     _________________________ ")
+    print("|        .......         |   |      .x%%%%%%x.         |")
+    print("|      ::::::;;::.       |   |     ,%%%%%%%%%%%        |")
+    print("|    .::;::::;::::.      |   |    ,%%%'  )'  \%        |")
+    print("|   .::::::::::::::      |   |   ,%x%) __   _ Y        |")
+    print("|   ::`_```_```;:::.     |   |   :%%% ~=-. <=~|        |")
+    print("|   ::=-) :=-`  ::::     |   |   :%%::. .:,\  |        |")
+    print("| `::|  / :     `:::     |   |   `;%:`\. `-' .'        |")
+    print("|   '|  `~'     ;:::     |   |    ``x`. -===-;         |")
+    print("|    :-:==-.   / :'      |   |     / `:`.__.;          |")
+    print("|    `. _    .'.d8:      |   |  .d8b.  :: ..`.         |")
+    print("| _.  |88bood88888._     |   | d88888b.  '  /8         |")
+    print("|~  `-+8888888888P  `-. _|   |d888888888b. ( 8b       /|")
+    print("|-'     ~~^^^^~~  `./8 ~ |   |~   ~`888888b  `8b     /:|")
+    print("|8b /  /  |   \  \  `8   |   |  ' ' `888888   `8. _ /:/|")
+    print("|P        `          8   |   |'      )88888b   8b |):X |")
+    print("|                    8b  |   |   ~ - |888888   `8b/:/:\|")
+    print("|                    `8  |   |       |888888    88\/~~;|")
+    print("|                     8b |   |       (888888b   88|  / |")
+    print("|         .           `8 |   |\       \888888   8-:   /|")
+    print("|________/_\___________8_|   |_\_______\88888_.'___\__/|")
+    print()
+    print("L u k e  S k y w a l k e r       H a n   S o l o")
+    print()
+    print("  Jedi Knight, Strong with       Smuggler, Pirate")
+    print("the force, has a lightsaber    has a gun and Chewie!")
+
     # Ask the user who to play as, repeat as long as they give invalid input.
     choice = input("Would you like to play as Luke or Han?").lower().strip()
     while choice != "luke" and choice != "han":
@@ -241,10 +270,32 @@ def choose_character():
         health = han_max_health
 
 
+def ready_to_play():
+    print("            _________  ___  _____                                        ")
+    print("           / __   __| / _ \ |  _ \                                       ")
+    print("     ______> \ | |   |  _  ||    /_____________________________          ")
+    print("    / _______/ |_|   |_| |_||_|\______________________________ \         ")
+    print("   / /                                                        \ \        ")
+    print("  | |                                                          | |       ")
+    print("  | |                                                          | |       ")
+    print("  | |                                                          | |       ")
+    print("  | |                                                          | |       ")
+    print("  | |                  Press Enter to Play                     | |       ")
+    print("  | |                                                          | |       ")
+    print("  | |                                                          | |       ")
+    print("  | |                                                          | |       ")
+    print("  | |                                                          | |       ")
+    print("   \ \____________________________    _   ___   ____   _______/ /        ")
+    print("    \___________________________  |  | | / _ \ |  _ \ / _______/         ")
+    print("                                | |/\| ||  _  ||    / > \                ")
+    print("                                 \_/\_/ |_| |_||_|\_\|__/                ")
+    input()
+
+
 # Main function
 def main():
     # Introduction (ready to play etc)
-    input("Press enter when you're ready to play")
+    ready_to_play()
 
     print()
 
